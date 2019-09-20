@@ -7,6 +7,7 @@
   "has-elf-tls": false,
   "has-rpath": false,
   "is-builtin": false,
+  "linker": "rust-lld",
   "linker-flavor": "ld.lld",
   "linker-is-gnu": false,
   "llvm-target": "i686-unknown-none",

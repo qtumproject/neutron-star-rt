@@ -13,11 +13,13 @@ extern "Rust"{
     fn on_call() -> u32;
     fn on_create() -> u32;
 }
+pub fn main(){}
 
 //note that __init_qtum() is called before _qtum_main
 #[start]
 #[no_mangle]
 pub extern "C" fn _qtum_main() -> u32 {
+    main();
     unsafe{
         let is_create_address: usize = 0x70000000 + 8;
         let is_create = is_create_address as *const u32;
