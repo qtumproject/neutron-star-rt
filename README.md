@@ -11,7 +11,7 @@ To compile:
 The following functions should be defined by users of this crate:
 
     #[no_mangle]
-    pub extern "C" fn __qtum_init() {}
+    pub extern "C" fn __init_qtum() {}
 
 This is used internally by the neutron-star crate and is called before the main function is called. 
 
