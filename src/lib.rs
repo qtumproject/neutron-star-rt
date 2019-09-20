@@ -10,24 +10,24 @@ extern "C"{
 
 //should be provided by final bin crate that includes this crate
 extern "Rust"{
+    fn on_call() -> u32;
     fn on_create() -> u32;
-    fn main() -> u32;
 }
+pub fn main(){}
 
 //note that __init_qtum() is called before _qtum_main
 #[start]
 #[no_mangle]
 pub extern "C" fn _qtum_main() -> u32 {
+    main();
     unsafe{
         let is_create_address: usize = 0x70000000 + 8;
         let is_create = is_create_address as *const u32;
-        if *is_create > 0{
-            let err = on_create();
-            if err > 0{
-                return err;
-            }
+        return if *is_create > 0{
+            on_create()
+        }else{
+            on_call()
         }
-        return main();
     }
 }
 
