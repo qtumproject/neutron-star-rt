@@ -3,13 +3,13 @@ name = "neutron-star-rt"
 version = "0.1.0"
 authors = ["Jordan Earls <earlz@qtum.info>"]
 edition = "2018"
-publish = ["neutron-star-rt"]
 description = "The minimal runtime required for smart contracts built on the Qtum Neutron platform"
 keywords = ["qtum", "blockchain"]
 repository = "https://github.com/qtumproject/neutron-star-rt"
 readme = "README.md"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 build = "build.rs"
+license = "mit"
 
 [dependencies]
 
