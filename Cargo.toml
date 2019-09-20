@@ -6,8 +6,10 @@ edition = "2018"
 publish = ["neutron-star-rt"]
 description = "The minimal runtime required for smart contracts built on the Qtum Neutron platform"
 keywords = ["qtum", "blockchain"]
-
+repository = "https://github.com/qtumproject/neutron-star-rt"
+readme = "README.md"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+build = "build.rs"
 
 [dependencies]
 
