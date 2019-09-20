@@ -1,0 +1,22 @@
+{
+  "arch": "x86",
+  "cpu": "i686",
+  "data-layout": "e-m:e-p:32:32-f64:32:64-f80:32-n8:16:32-S128",
+  "dynamic-linking": false,
+  "executables": true,
+  "has-elf-tls": false,
+  "has-rpath": false,
+  "is-builtin": false,
+  "linker-flavor": "ld.lld",
+  "linker-is-gnu": false,
+  "llvm-target": "i686-unknown-none",
+  "max-atomic-width": 64,
+  "os": "qtum",
+  "position-independent-executables": false,
+  "target-c-int-width": "32",
+  "target-endian": "little",
+  "target-family": "unix",
+  "target-pointer-width": "32",
+  "vendor": "qtum",
+  "features": "-mmx,-sse,+soft-float"
+}
