@@ -5,6 +5,8 @@ GLOBAL __start
 GLOBAL __exit
 GLOBAL __qtum_syscall
 GLOBAL __qtum_syscall_short
+GLOBAL __testbench_syscall
+GLOBAL __testbench_syscall_short
 
 EXTERN _init
 EXTERN _qtum_main
@@ -46,6 +48,38 @@ __qtum_syscall:
 
 ; long __qtum_syscall_short(long number, long p1, long p2, long p3)
 __qtum_syscall_short:
+  push ebx
+  mov eax, [esp + 8]
+  mov ebx, [esp + 8 + 4]
+  mov ecx, [esp + 8 + 8]
+  mov edx, [esp + 8 + 12]
+  int 0x40
+  pop ebx
+  ret
+
+; TODO find a way to not include this by default
+; long __testbench_syscall(long number, long p1, long p2, long p3, long p4, long p5, long p6)
+__testbench_syscall:
+  push ebp
+  push edi
+  push esi
+  push ebx
+  mov eax, [esp + 20]
+  mov ebx, [esp + 20 + 4]
+  mov ecx, [esp + 20 + 8]
+  mov edx, [esp + 20 + 12]
+  mov esi, [esp + 20 + 16]
+  mov edi, [esp + 20 + 20]
+  mov ebp, [esp + 20 + 24]
+  int 0x40
+  pop ebx
+  pop esi
+  pop edi
+  pop ebp
+  ret
+
+; long __testbench_syscall_short(long number, long p1, long p2, long p3)
+__testbench_syscall_short:
   push ebx
   mov eax, [esp + 8]
   mov ebx, [esp + 8 + 4]

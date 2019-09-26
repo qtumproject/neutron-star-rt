@@ -5,6 +5,8 @@ extern "C"{
     //long __qtum_syscall(long number, long p1, long p2, long p3, long p4, long p5, long p6)
     pub fn __qtum_syscall(num: u32, p1: u32, p2: u32, p3: u32, p4: u32, p5: u32, p6: u32) -> u32;
     pub fn __qtum_syscall_short(num: u32, p1: u32, p2: u32, p3: u32) -> u32;
+    pub fn __testbench_syscall(num: u32, p1: u32, p2: u32, p3: u32, p4: u32, p5: u32, p6: u32) -> u32;
+    pub fn __testbench_syscall_short(num: u32, p1: u32, p2: u32, p3: u32) -> u32;
     pub fn __exit(exit_code: u32) -> !;
 }
 
