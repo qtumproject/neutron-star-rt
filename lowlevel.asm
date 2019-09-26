@@ -71,7 +71,7 @@ __testbench_syscall:
   mov esi, [esp + 20 + 16]
   mov edi, [esp + 20 + 20]
   mov ebp, [esp + 20 + 24]
-  int 0x40
+  int 0x50
   pop ebx
   pop esi
   pop edi
@@ -85,7 +85,7 @@ __testbench_syscall_short:
   mov ebx, [esp + 8 + 4]
   mov ecx, [esp + 8 + 8]
   mov edx, [esp + 8 + 12]
-  int 0x40
+  int 0x50
   pop ebx
   ret
 
