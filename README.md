@@ -5,13 +5,13 @@ This is the minimal runtime and low level routines required to use the Qtum Neut
 To compile:
 
     ./assemble.sh # requires yasm to be installed
-    xargo build --target i486-qtum
+    xargo build --target i486-neutron
 
 
 The following functions should be defined by users of this crate:
 
     #[no_mangle]
-    pub extern "C" fn __init_qtum() {}
+    pub extern "C" fn __init_neutron() {}
 
 This is used internally by the neutron-star crate and is called before the main function is called. 
 
