@@ -3,21 +3,21 @@ BITS 32
 SECTION .text
 GLOBAL __start
 GLOBAL __exit
-GLOBAL __qtum_syscall
-GLOBAL __qtum_syscall_short
+GLOBAL __neutron_syscall
+GLOBAL __neutron_syscall_short
 GLOBAL __testbench_syscall
 GLOBAL __testbench_syscall_short
 
 EXTERN _init
-EXTERN _qtum_main
-EXTERN __init_qtum
+EXTERN _neutron_main
+EXTERN __init_neutron
 
 [SECTION __start_text]
 __start:
 mov esp, 0x80010000 + 1024 * 7 ; init stack for Qtum stack space
-call __init_qtum ;internal qtum runtime setup
+call __init_neutron ;internal qtum runtime setup
 mov eax, 0
-call _qtum_main ;main function
+call _neutron_main ;main function
 
 exit:
 ; eax is return code
@@ -27,7 +27,7 @@ hlt ; should never reach this
 [SECTION .text]
 
 ; long __qtum_syscall(long number, long p1, long p2, long p3, long p4, long p5, long p6)
-__qtum_syscall:
+__neutron_syscall:
   push ebp
   push edi
   push esi
@@ -47,7 +47,7 @@ __qtum_syscall:
   ret
 
 ; long __qtum_syscall_short(long number, long p1, long p2, long p3)
-__qtum_syscall_short:
+__neutron_syscall_short:
   push ebx
   mov eax, [esp + 8]
   mov ebx, [esp + 8 + 4]

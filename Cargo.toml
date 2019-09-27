@@ -1,6 +1,6 @@
 [package]
 name = "neutron-star-rt"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Jordan Earls <earlz@qtum.info>"]
 edition = "2018"
 description = "The minimal runtime required for smart contracts built on the Qtum Neutron platform"

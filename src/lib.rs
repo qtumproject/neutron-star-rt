@@ -2,9 +2,8 @@
 #![no_std]
 
 extern "C"{
-    //long __qtum_syscall(long number, long p1, long p2, long p3, long p4, long p5, long p6)
-    pub fn __qtum_syscall(num: u32, p1: u32, p2: u32, p3: u32, p4: u32, p5: u32, p6: u32) -> u32;
-    pub fn __qtum_syscall_short(num: u32, p1: u32, p2: u32, p3: u32) -> u32;
+    pub fn __neutron_syscall(num: u32, p1: u32, p2: u32, p3: u32, p4: u32, p5: u32, p6: u32) -> u32;
+    pub fn __neutron_syscall_short(num: u32, p1: u32, p2: u32, p3: u32) -> u32;
     pub fn __testbench_syscall(num: u32, p1: u32, p2: u32, p3: u32, p4: u32, p5: u32, p6: u32) -> u32;
     pub fn __testbench_syscall_short(num: u32, p1: u32, p2: u32, p3: u32) -> u32;
     pub fn __exit(exit_code: u32) -> !;
@@ -20,7 +19,7 @@ pub fn main(){}
 //note that __init_qtum() is called before _qtum_main
 #[start]
 #[no_mangle]
-pub extern "C" fn _qtum_main() -> u32 {
+pub extern "C" fn _neutron_main() -> u32 {
     main();
     unsafe{
         let is_create_address: usize = 0x70000000 + 8;
@@ -34,7 +33,7 @@ pub extern "C" fn _qtum_main() -> u32 {
 }
 
 #[panic_handler]
-pub fn _qtum_panic_handler(_info: &core::panic::PanicInfo) -> ! {
+pub fn _neutron_panic_handler(_info: &core::panic::PanicInfo) -> ! {
     unsafe{
         //return fault + error + revert
         __exit(8 + 1 + 2);
