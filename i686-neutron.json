@@ -12,7 +12,7 @@
   "linker-is-gnu": false,
   "llvm-target": "i686-unknown-none",
   "max-atomic-width": 64,
-  "os": "qtum",
+  "os": "neutron",
   "position-independent-executables": false,
   "target-c-int-width": "32",
   "target-endian": "little",
