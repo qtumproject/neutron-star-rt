@@ -31,11 +31,3 @@ pub extern "C" fn _neutron_main() -> u32 {
         }
     }
 }
-
-#[panic_handler]
-pub fn _neutron_panic_handler(_info: &core::panic::PanicInfo) -> ! {
-    unsafe{
-        //return fault + error + revert
-        __exit(8 + 1 + 2);
-    }
-}
