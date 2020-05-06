@@ -109,6 +109,7 @@ SECTIONS
     *(.ARM.extab.*);
     *(.debug*);
     *(.comment*);
+    *(.eh_frame*);
     
   }
 }
