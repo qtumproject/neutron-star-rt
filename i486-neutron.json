@@ -19,5 +19,7 @@
   "target-family": "unix",
   "target-pointer-width": "32",
   "vendor": "qtum",
-  "features": "-mmx,-sse,+soft-float"
+  "features": "-mmx,-sse,+soft-float",
+  "panic-strategy": "abort",
+  "relocation-model": "static"
 }

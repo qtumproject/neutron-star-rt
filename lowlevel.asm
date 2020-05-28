@@ -15,7 +15,7 @@ GLOBAL __sccs_item_limit_remaining
 GLOBAL __gas_remaining
 GLOBAL __exit_execution
 GLOBAL __revert_execution
-GLOBAL __execution_status
+GLOBAL __execution_type
 GLOBAL __system_call
 
 EXTERN _init
@@ -136,8 +136,8 @@ mov eax, [esp + 4 + 0]
 int 0xFE
 hlt ;should never reach here
 
-;unsigned int __execution_status()
-__execution_status:
+;unsigned int __execution_type()
+__execution_type:
 int 0x99
 ret
 

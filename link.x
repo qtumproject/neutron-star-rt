@@ -113,10 +113,10 @@ SECTIONS
     
   }
 }
-/*
+
 ASSERT(SIZEOF(.got) == 0, "
-ERROR(cortex-m-rt): .got section detected in the input object files
+ERROR(neutron): .got section detected in the input object files
 Dynamic relocations are not supported. If you are linking to C code compiled using
 the 'cc' crate then modify your build script to compile the C code _without_
 the -fPIC flag. See the documentation of the `cc::Build.pic` method for details.");
-*/
+
