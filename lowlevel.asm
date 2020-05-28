@@ -28,7 +28,8 @@ mov esp, 0x80010000 + 1024 * 7 ; init stack for Qtum stack space
 call __init_neutron ;internal qtum runtime setup
 mov eax, 0
 call _neutron_main ;main function
-
+int 0xFF ;exit_execution system call
+hlt
 [SECTION .text]
 
 ;Summary of interface:
